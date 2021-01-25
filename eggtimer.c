@@ -150,7 +150,7 @@ takeinput(eggtimer* e, int i)
 int init(eggtimer* e)
 {
         e->cs = 0;
-        e->dcs = 0:
+        e->dcs = 0;
         e->s = 0;
         e->ds = 0;
         e->m = 0;
@@ -175,7 +175,7 @@ main(void)
 	KeySym k;
 	XKeyEvent *ev;
 
-	init(e);
+	init(&e);
 	dpy = XOpenDisplay(NULL);
 	if (dpy == NULL)
 	{
