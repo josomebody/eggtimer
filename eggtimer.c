@@ -175,7 +175,7 @@ main(void)
 	KeySym k;
 	XKeyEvent *ev;
 
-	init(&e);
+	init(&et);
 	dpy = XOpenDisplay(NULL);
 	if (dpy == NULL)
 	{
