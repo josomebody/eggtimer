@@ -4,7 +4,7 @@
 #include <X11/keysym.h>
 #include <sys/time.h>
 
-static char* cmd_done = "aplay beep.wav"; /* put whatever command you wanna run when the time ticks down here */
+static char* cmd_done = "aplay ./beep.wav"; /* put whatever command you wanna run when the time ticks down here */
 static unsigned char dispdigits[] =    {0b11110111, 
 					0b10010010, 
 					0b11011101, 
@@ -147,6 +147,18 @@ takeinput(eggtimer* e, int i)
 	return 0;
 }
 
+int init(eggtimer* e)
+{
+        e->cs = 0;
+        e->dcs = 0:
+        e->s = 0;
+        e->ds = 0;
+        e->m = 0;
+        e->dm = 0;
+        setbits(e);
+        return 0;
+}
+
 int
 main(void)
 {
@@ -163,6 +175,7 @@ main(void)
 	KeySym k;
 	XKeyEvent *ev;
 
+	init(e);
 	dpy = XOpenDisplay(NULL);
 	if (dpy == NULL)
 	{
