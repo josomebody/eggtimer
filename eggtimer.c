@@ -48,40 +48,40 @@ int
 tick(eggtimer* e)
 {
 	e->cs -=1;
-	e->csdisp = dispdigits[e->cs];
+	if (e->cs > -1) e->csdisp = dispdigits[e->cs];
 	if (e->cs < 0)
 	{
 		e->dcs -=1;
 		e->cs = 9;
-		e->dcsdisp = dispdigits[e->dcs];
+		if (e->dcs > -1) e->dcsdisp = dispdigits[e->dcs];
 		e->csdisp = dispdigits[e->cs];
 	}
 	if (e->dcs < 0)
 	{
 		e->s -=1;
 		e->dcs = 9;
-		e->sdisp = dispdigits[e->s];
+		if (e->s > -1) e->sdisp = dispdigits[e->s];
 		e->dcsdisp = dispdigits[e->dcs];
 	}
 	if (e->s < 0)
 	{
 		e->ds -=1;
 		e->s = 9;
-		e->dsdisp = dispdigits[e->ds];
+		if (e->ds > -1) e->dsdisp = dispdigits[e->ds];
 		e->sdisp = dispdigits[e->s];
 	}
 	if (e->ds < 0)
 	{
 		e->m -=1;
 		e->ds = 5;
-		e->mdisp = dispdigits[e->m];
+		if (e->m > -1) e->mdisp = dispdigits[e->m];
 		e->dsdisp = dispdigits[e->ds];
 	}
 	if (e->m < 0)
 	{
 		e->dm -=1;
 		e->m = 9;
-		e->dmdisp = dispdigits[e->dm];
+		if (e->dm > -1) e->dmdisp = dispdigits[e->dm];
 		e->mdisp = dispdigits[e->m];
 	}
 	if (e->dm < 0)
